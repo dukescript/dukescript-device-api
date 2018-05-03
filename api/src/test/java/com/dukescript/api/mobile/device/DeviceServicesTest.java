@@ -23,27 +23,29 @@
  * THE SOFTWARE.
  * #L%
  */
-package com.dukescript.api.mobile.device.impl;
+package com.dukescript.api.mobile.device;
 
-import apple.c.Globals;
-import com.dukescript.api.mobile.device.Device;
-import com.dukescript.api.mobile.device.spi.DeviceService;
-import com.dukescript.api.mobile.device.DeviceServices;
+import net.java.html.junit.BrowserRunner;
+import net.java.html.junit.HTMLContent;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-/**
- *
- * @author antonepple
- */
-public class MOEDeviceService implements DeviceService{
 
-    @Override
-    public Device getDeviceImpl() {
-        Device device = new Device();
-        device.setManufacturer("Apple");
-        device.setPlatform("iOS");
-        device.setModel(Globals.getprogname());
+@HTMLContent("\n"
+        + "<h1>Test</h1>\n"
+)
+@RunWith(BrowserRunner.class)
+public class DeviceServicesTest {
 
-        return device;
+        @Test
+    public void testDummyImpl() {
+        // BEGIN: com.dukescript.api.mobile.device.DeviceServicesTest#testDummyImpl
+        Device device = DeviceServices.getDevice();
+        String model = device.getModel();
+        String platform = device.getPlatform();
+        String version = device.getVersion();
+        String manufacturer = device.getManufacturer();
+        // END: com.dukescript.api.mobile.device.DeviceServicesTest#testDummyImpl
     }
     
 }

@@ -26,6 +26,7 @@
 package com.dukescript.api.mobile.device.impl;
 
 import com.dukescript.api.mobile.device.Device;
+import com.dukescript.api.mobile.device.spi.DeviceService;
 import com.dukescript.api.mobile.device.DeviceServices;
 import java.util.Properties;
 import org.robovm.apple.foundation.Foundation;
@@ -34,7 +35,7 @@ import org.robovm.apple.foundation.Foundation;
  *
  * @author antonepple
  */
-public class RoboVMDeviceService implements DeviceServices.DeviceService{
+public class RoboVMDeviceService implements DeviceService{
 
     @Override
     public Device getDeviceImpl() {

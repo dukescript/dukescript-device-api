@@ -25,6 +25,7 @@
  */
 package com.dukescript.api.mobile.device;
 
+import com.dukescript.api.mobile.device.spi.DeviceService;
 import com.dukescript.api.mobile.device.impl.AndroidDeviceService;
 import com.dukescript.api.mobile.device.impl.MOEDeviceService;
 import com.dukescript.api.mobile.device.impl.RoboVMDeviceService;
@@ -32,13 +33,21 @@ import net.java.html.json.Model;
 import net.java.html.json.Property;
 
 /**
- *
+ * A service to get information about the device your application is running on.
+ * usage:
+ * <p>
+ * {@codesnippet com.dukescript.api.mobile.device.DeviceServicesTest#testDummyImpl}
+ * 
  * @author antonepple
  */
 public class DeviceServices {
 
     public static DeviceService INSTANCE;
 
+    /**
+     * Get the Device your application is running on.
+     * @return the Device  
+     */
     public static Device getDevice() {
         if (INSTANCE == null) {
             try {
@@ -74,11 +83,6 @@ public class DeviceServices {
         return INSTANCE.getDeviceImpl();
     }
 
-    public static interface DeviceService {
-
-        public Device getDeviceImpl();
-
-    }
 
     @Model(className = "Device", properties = {
         @Property(name = "platform", type = String.class),

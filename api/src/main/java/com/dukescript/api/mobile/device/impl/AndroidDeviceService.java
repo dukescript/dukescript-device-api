@@ -27,7 +27,7 @@
 package com.dukescript.api.mobile.device.impl;
 
 import com.dukescript.api.mobile.device.Device;
-import com.dukescript.api.mobile.device.DeviceServices.DeviceService;
+import com.dukescript.api.mobile.device.spi.DeviceService;
 
 /**
  *
