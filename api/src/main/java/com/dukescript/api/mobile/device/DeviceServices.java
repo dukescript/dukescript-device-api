@@ -40,9 +40,17 @@ import net.java.html.json.Property;
  * 
  * @author antonepple
  */
+    @Model(className = "Device", properties = {
+        @Property(name = "platform", type = String.class),
+        @Property(name = "version", type = String.class),
+        @Property(name = "model", type = String.class),
+        @Property(name = "manufacturer", type = String.class)}
+    )
 public class DeviceServices {
 
-    public static DeviceService INSTANCE;
+    private static DeviceService INSTANCE;
+    
+    private DeviceServices(){}
 
     /**
      * Get the Device your application is running on.
@@ -83,15 +91,6 @@ public class DeviceServices {
         return INSTANCE.getDeviceImpl();
     }
 
-
-    @Model(className = "Device", properties = {
-        @Property(name = "platform", type = String.class),
-        @Property(name = "version", type = String.class),
-        @Property(name = "model", type = String.class),
-        @Property(name = "manufacturer", type = String.class)}
-    )
-    public static class DeviceVMD {
-    }
 
     private static class DeviceServiceImpl implements DeviceService {
 
