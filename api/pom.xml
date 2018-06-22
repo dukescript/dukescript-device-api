@@ -146,9 +146,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.dukescript.presenters</groupId>
+            <groupId>com.dukescript.api.mobile</groupId>
             <artifactId>fakeiosemul</artifactId>
-            <version>${presenters.version}</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
