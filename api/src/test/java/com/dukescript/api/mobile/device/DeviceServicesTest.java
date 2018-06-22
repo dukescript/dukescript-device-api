@@ -26,14 +26,10 @@
 package com.dukescript.api.mobile.device;
 
 import net.java.html.junit.BrowserRunner;
-import net.java.html.junit.HTMLContent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 
-@HTMLContent("\n"
-        + "<h1>Test</h1>\n"
-)
 @RunWith(BrowserRunner.class)
 public class DeviceServicesTest {
 

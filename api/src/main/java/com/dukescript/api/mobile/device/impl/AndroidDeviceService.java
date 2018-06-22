@@ -81,7 +81,7 @@ public class AndroidDeviceService implements DeviceService {
     }
 
     public boolean isAmazonDevice() {
-        if (android.os.Build.MANUFACTURER.equals(AMAZON_DEVICE)) {
+        if (AMAZON_DEVICE.equals(android.os.Build.MANUFACTURER)) {
             return true;
         }
         return false;
