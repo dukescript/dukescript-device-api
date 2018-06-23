@@ -4,6 +4,7 @@
     <groupId>com.dukescript.api.mobile</groupId>
     <artifactId>deviceapi</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Device API and Tests</name>
     <packaging>pom</packaging>
     <url>http://dukescript.com</url>
     <description>A Java API for accessing mobile device info in DukeScript Applications</description>
@@ -50,6 +51,7 @@
     <modules>
         <module>fakeiosemul</module>
         <module>api</module>
+        <module>testing</module>
     </modules>
     
     <properties>
@@ -66,6 +68,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <robovm.version>2.3.2</robovm.version>
         <moe.version>1.4.0</moe.version>
+        <bck2brwsr.version>0.23</bck2brwsr.version>
     </properties>
     
     <dependencyManagement>
@@ -101,6 +104,50 @@
     </dependencyManagement>
     
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.netbeans.html</groupId>
+                    <artifactId>html4j-maven-plugin</artifactId>
+                    <version>${net.java.html.version}</version>
+                    <executions>
+                        <execution>
+                            <id>js-classes</id>
+                            <goals>
+                                <goal>process-js-annotations</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <junitArtifactName>com.dukescript.api:junit-osgi</junitArtifactName>
+                        <systemPropertyVariables>
+                            <fxpresenter.headless>true</fxpresenter.headless>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                    <configuration>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>

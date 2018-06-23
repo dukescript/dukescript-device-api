@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.dukescript.api.mobile</groupId>
+        <artifactId>testing</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <name>Testing App - Device API</name>
+    <artifactId>tests</artifactId>
+    <packaging>bundle</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>com.dukescript.api.device.tests</Export-Package>
+                        <Bundle-SymbolicName>com.dukescript.api.device.tests</Bundle-SymbolicName>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.dukescript.api.mobile</groupId>
+            <artifactId>api</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.dukescript.api</groupId>
+            <artifactId>junit-osgi</artifactId>
+            <scope>compile</scope>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+</project>
