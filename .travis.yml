@@ -9,7 +9,7 @@ before_script:
   - sleep 3
 script:
   - jdk_switcher use oraclejdk8 || java -version
-  - mvn license:check-file-header -Plicense
+  - mvn license:check-file-header -Plicense,android
   - mvn install -DskipTests
   - mvn test
   - mvn -f api javadoc:javadoc

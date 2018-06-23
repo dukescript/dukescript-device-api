@@ -40,10 +40,7 @@
             </activation>
             <id>android</id>
             <modules>
-                <!--
-                <module>androidapp</module>
-                <module>androidit</module>
-                                -->
+                <module>android</module>
             </modules>
         </profile>
     </profiles>
