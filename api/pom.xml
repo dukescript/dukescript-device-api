@@ -19,9 +19,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
                 <configuration>
                     <subpackages>${publicPackages}</subpackages>
+                    <sourcepath>src/main/java:target/generated-sources/annotations/</sourcepath>
                     <skip>false</skip>
                     <excludePackageNames>com.dukescript.api.mobile.device.impl</excludePackageNames>
                     <groups>
@@ -42,9 +42,9 @@
                     <docletArtifact>
                         <groupId>org.apidesign.javadoc</groupId>
                         <artifactId>codesnippet-doclet</artifactId>
-                        <version>0.10</version>
+                        <version>0.24</version>
                     </docletArtifact>
-                    <additionalparam>-snippetpath "${basedir}/src/test/java"</additionalparam>
+                    <additionalparam>-snippetpath src/test/java</additionalparam>
                 </configuration>
             </plugin>
             <plugin>

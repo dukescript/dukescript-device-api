@@ -25,7 +25,7 @@
  */
 package com.dukescript.api.mobile.device;
 
-import com.dukescript.api.mobile.device.spi.DeviceService;
+import com.dukescript.api.mobile.device.impl.DeviceService;
 import com.dukescript.api.mobile.device.impl.AndroidDeviceService;
 import com.dukescript.api.mobile.device.impl.MOEDeviceService;
 import com.dukescript.api.mobile.device.impl.RoboVMDeviceService;

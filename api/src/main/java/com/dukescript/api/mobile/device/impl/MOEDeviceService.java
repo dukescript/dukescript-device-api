@@ -27,7 +27,6 @@ package com.dukescript.api.mobile.device.impl;
 
 import apple.c.Globals;
 import com.dukescript.api.mobile.device.Device;
-import com.dukescript.api.mobile.device.spi.DeviceService;
 import com.dukescript.api.mobile.device.DeviceServices;
 
 /**

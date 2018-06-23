@@ -1,4 +1,4 @@
-package com.dukescript.api.mobile.device.spi;
+package com.dukescript.api.mobile.device.impl;
 
 /*
  * #%L

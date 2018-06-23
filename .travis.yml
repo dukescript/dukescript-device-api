@@ -12,6 +12,7 @@ script:
   - mvn license:check-file-header -Plicense
   - mvn install -DskipTests
   - mvn test
+  - mvn -f api javadoc:javadoc
 os:
   - linux
   - osx 
