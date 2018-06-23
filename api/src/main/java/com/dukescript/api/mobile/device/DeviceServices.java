@@ -40,7 +40,7 @@ import net.java.html.json.Property;
  * 
  * @author antonepple
  */
-    @Model(className = "Device", properties = {
+    @Model(className = "Device", builder = "put", properties = {
         @Property(name = "platform", type = String.class),
         @Property(name = "version", type = String.class),
         @Property(name = "model", type = String.class),
@@ -62,7 +62,7 @@ public class DeviceServices {
                 AndroidDeviceService androidDeviceService = new AndroidDeviceService();
                 androidDeviceService.getDeviceImpl();
                 INSTANCE = androidDeviceService;
-            } catch (NoClassDefFoundError ncdfe) {
+            } catch (Throwable ncdfe) {
                 // not android
             }
             if (INSTANCE == null) {
@@ -70,7 +70,7 @@ public class DeviceServices {
                     RoboVMDeviceService roboVMDeviceService = new RoboVMDeviceService();
                     roboVMDeviceService.getDeviceImpl();
                     INSTANCE = roboVMDeviceService;
-                } catch (NoClassDefFoundError ncdfe) {
+                } catch (Throwable ncdfe) {
                     // not RoboVM
                 }
             }
@@ -79,7 +79,7 @@ public class DeviceServices {
                     MOEDeviceService moeDeviceService = new MOEDeviceService();
                     moeDeviceService.getDeviceImpl();
                     INSTANCE = moeDeviceService;
-                } catch (NoClassDefFoundError ncdfe) {
+                } catch (Throwable ncdfe) {
                     // not MobiVM
                 }
             }
@@ -99,7 +99,19 @@ public class DeviceServices {
 
         @Override
         public Device getDeviceImpl() {
-            return new Device();
+            String version = System.getProperty("java.vm.version");
+            String vendor = System.getProperty("java.vm.vendor");
+            String model = System.getProperty("java.version");
+            String os = System.getProperty("os.name");
+            return new Device().
+                putManufacturer(u(vendor)).
+                putModel(u(model)).
+                putPlatform(u(os)).
+                putVersion(u(version));
+        }
+
+        private static String u(String s) {
+            return s == null ? "unknown" : s;
         }
     }
 }
