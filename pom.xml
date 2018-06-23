@@ -23,7 +23,10 @@
             <timezone>+1</timezone>
         </developer>
     </developers>
-    
+    <organization>
+        <name>Dukehoff GmbH</name>
+    </organization>
+    <inceptionYear>2018</inceptionYear>
     <licenses>
         <license>
             <name>MIT</name>
