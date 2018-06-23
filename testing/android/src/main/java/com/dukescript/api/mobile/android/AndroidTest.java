@@ -26,19 +26,15 @@ package com.dukescript.api.mobile.android;
  * #L%
  */
 
-import com.dukescript.api.device.tests.DeviceInfoCheck;
-import net.java.html.junit.BrowserRunner;
+import com.dukescript.presenters.Android;
 
-
-public class AndroidMain {
-    static boolean ok;
-
-    private AndroidMain() {
+public class AndroidTest extends android.test.ActivityInstrumentationTestCase2<Android> {
+    public AndroidTest() {
+        super(Android.class);
     }
 
-    public static void main(android.content.Context context) throws Exception {
-        BrowserRunner.execute(DeviceInfoCheck.class.getName());
-        ok = true;
+    public void testVerifySomeThingExecuted() throws Exception {
+        AndroidMain.main(this.getActivity().getApplicationContext());
+        assertTrue("Tests executed OK", AndroidMain.ok);
     }
-
 }

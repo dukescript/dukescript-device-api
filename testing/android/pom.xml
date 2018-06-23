@@ -74,6 +74,22 @@
                 <version>${android.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <test>
+                        <skip>${skipTests}</skip>
+                        <!--<instrumentationPackage>packageName</instrumentationPackage> -->
+                        <!--<instrumentationRunner>className</instrumentationRunner> -->
+                        <debug>${debug}</debug>
+                        <!--<coverage>true|false</coverage> -->
+                        <!--<logonly>true|false</logonly> avd -->
+                        <!--<testsize>small|medium|large</testsize> -->
+                        <createReport>true</createReport>
+                        <!--<classes> -->
+                        <!--<class>your.package.name.YourTestClass</class> -->
+                        <!--</classes> -->
+                        <!--<packages> -->
+                        <!--<package>your.package.name</package> -->
+                        <!--</packages> -->
+                    </test>
                     <assetsDirectory>src/main/webapp</assetsDirectory>
                     <apkDebug>${debug}</apkDebug>
                     <resourceDirectory>target/res</resourceDirectory>
@@ -121,6 +137,18 @@
             <artifactId>android</artifactId>
             <version>${platform.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android-test</artifactId>
+            <scope>provided</scope>
+            <version>4.1.1.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.dukescript.presenters</groupId>

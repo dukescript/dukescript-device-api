@@ -36,8 +36,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="android"
+        android:label="Androind Testing - Device API"
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <uses-library android:name="android.test.runner" />
         <activity android:name="com.dukescript.presenters.Android"
                   android:configChanges="orientation|screenSize">
             <intent-filter>
@@ -55,5 +56,9 @@
         <meta-data android:name="loadClass" android:value="com.dukescript.api.mobile.android.AndroidMain" />
         <meta-data android:name="invoke" android:value="main" />
     </application>
+    <instrumentation
+        android:targetPackage="com.dukescript.api.mobile.android"
+        android:name="android.test.InstrumentationTestRunner"
+    />
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
