@@ -12,6 +12,8 @@
     <modules>
         <module>app</module>
         <module>browser</module>
+        <module>moetest</module>
+        <module>robovmtest</module>
     </modules>
     <build>
         <plugins>

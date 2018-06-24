@@ -79,14 +79,12 @@
             <dependency>
                 <groupId>com.dukescript.api</groupId>
                 <artifactId>junit-osgi</artifactId>
-                <scope>test</scope>
                 <version>4.12</version>
             </dependency>
             <dependency>
                 <groupId>com.dukescript.api</groupId>
                 <artifactId>junit-browser-runner</artifactId>
                 <version>${junit.browser.version}</version>
-                <scope>test</scope>
                 <type>jar</type>
                 <exclusions>
                     <exclusion>
